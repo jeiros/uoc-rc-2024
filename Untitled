@@ -1,0 +1,361 @@
+@prefix : <http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/> .
+
+<http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas> rdf:type owl:Ontology ;
+                                                                             rdfs:comment "Author: Juan Eiros Zamora" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/author
+:author rdf:type owl:ObjectProperty ;
+        owl:inverseOf :submits ;
+        rdfs:domain :Survey ;
+        rdfs:range :Passenger ;
+        rdfs:comment "The individual who writes and submits a survey or review about a flight experience." ;
+        rdfs:label "Author" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/hasSeatType
+:hasSeatType rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Flight ;
+             rdfs:range :Seat ;
+             rdfs:comment "Indicates the type of seat that a passenger has booked or been assigned on a flight." ;
+             rdfs:label "Has Seat Type" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/operatedBy
+:operatedBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :operates ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Flight ;
+            rdfs:range :Airline ;
+            rdfs:comment "Shows the airline that operates a specific flight." ;
+            rdfs:label "Operated By" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/operates
+:operates rdf:type owl:ObjectProperty ;
+          rdfs:domain :Airline ;
+          rdfs:range :Flight ;
+          rdfs:comment "Links an airline to the flight that it operates." ;
+          rdfs:label "Operates" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/reviewedIn
+:reviewedIn rdf:type owl:ObjectProperty ;
+            rdfs:domain :Flight ;
+            rdfs:range :Survey ;
+            rdfs:comment "Connects a flight to the survey in which it has been reviewed." ;
+            rdfs:label "Reviewed In" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/submits
+:submits rdf:type owl:ObjectProperty ;
+         rdfs:domain :Passenger ;
+         rdfs:range :Survey ;
+         rdfs:comment "Represents the action of a passenger submitting a survey or review about their flight experience." ;
+         rdfs:label "Submits" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/aircraft
+:aircraft rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Flight ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Identifies the aircraft used for a specific flight." ;
+          rdfs:label "Aircraft" ;
+          rdfs:sameAs "https://dbpedia.org/page/Aircraft" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/body
+:body rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Survey ;
+      rdfs:range xsd:string ;
+      rdfs:comment "Contains the main text of a passenger's review detailing their flight experience." ;
+      rdfs:label "Review Body" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/country
+:country rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Airline ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Denotes the country related to a specific context, such as airline registration or passenger nationality." ;
+         rdfs:label "Country" ;
+         rdfs:sameAs "https://dbpedia.org/page/Country" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/countryOfOrigin
+:countryOfOrigin rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Passenger ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Indicates the country where a passenger or crew member originates from." ;
+                 rdfs:label "Country of Origin" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/datePublished
+:datePublished rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Survey ;
+               rdfs:range xsd:dateTime ;
+               rdfs:comment "The date when a review or survey was published." ;
+               rdfs:label "Date Published" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/destination
+:destination rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Flight ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The final arrival airport of a flight." ;
+             rdfs:label "Destination" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/flightDate
+:flightDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Flight ;
+            rdfs:range xsd:dateTime ;
+            rdfs:comment "The date when a flight took place." ;
+            rdfs:label "Flight Date" ;
+            rdfs:sameAs "https://dbpedia.org/page/Calendar_date" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Airline ,
+                  :Passenger ;
+      rdfs:range xsd:string ;
+      rdfs:comment "A person's full name or an entity's official name." ;
+      rdfs:label "Name" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/origin
+:origin rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Flight ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The starting location of a flight." ;
+        rdfs:label "Origin" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Survey ;
+        rdfs:range xsd:double ;
+        rdfs:comment "A score given by a passenger to rate their flight experience, typically on a scale." ;
+        rdfs:label "Rating" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/recommended
+:recommended rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Survey ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Indicates whether a passenger recommends the airline after their experience." ;
+             rdfs:label "Recommended" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Survey ;
+       rdfs:range xsd:string ;
+       rdfs:comment "The title of a review or survey entry." ;
+       rdfs:label "Title" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#CabinCrew
+:CabinCrew rdf:type owl:Class ;
+           rdfs:subClassOf :CrewMember ;
+           rdfs:comment "A crew member who is responsible for the safety and comfort of passengers during a flight." ;
+           rdfs:label "Cabin Crew" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#CrewMember
+:CrewMember rdf:type owl:Class ;
+            rdfs:comment "An individual who is a member of the flight crew, responsible for the operation of the aircraft and service during the flight." ;
+            rdfs:label "Crew Member" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#EntertainmentSystem
+:EntertainmentSystem rdf:type owl:Class ;
+                     rdfs:subClassOf :FlightServices ;
+                     rdfs:comment "An electronic system provided to passengers during a flight for leisure, such as movies, music, or games." ;
+                     rdfs:label "Entertainment System" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#FlightServices
+:FlightServices rdf:type owl:Class ;
+                rdfs:comment "A series of ammenities and other various services provided to passengers of a flight." ;
+                rdfs:label "Flight Services" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Internet
+:Internet rdf:type owl:Class ;
+          rdfs:subClassOf :FlightServices ;
+          rdfs:comment "The ability to connect passenger's electronic devices to the public Internet." ;
+          rdfs:label "Internet" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Luggage
+:Luggage rdf:type owl:Class ;
+         rdfs:comment "Personal belongings of passengers transported in the aircraft's hold or cabin." ;
+         rdfs:label "Luggage" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#MealService
+:MealService rdf:type owl:Class ;
+             rdfs:subClassOf :FlightServices ;
+             rdfs:comment "A service provided on a flight that includes the offering of meals and beverages to passengers." ;
+             rdfs:label "Meal Service" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Pilot
+:Pilot rdf:type owl:Class ;
+       rdfs:subClassOf :CrewMember ;
+       rdfs:comment "A crew member who is qualified to operate the aircraft and is responsible for navigating the flight." ;
+       rdfs:label "Pilot" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Airline
+:Airline rdf:type owl:Class ;
+         rdfs:comment "An organization that provides air transport services for traveling passengers." ;
+         rdfs:label "Airline" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/BusinessClass
+:BusinessClass rdf:type owl:Class ;
+               rdfs:subClassOf :Seat ;
+               rdfs:comment "A high-quality seat class on a flight that offers additional space, comfort, and service. It is the most expensive kind of seat, suited for people that travel for work purposes." ;
+               rdfs:label "Business Class Seat" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/EconomyClass
+:EconomyClass rdf:type owl:Class ;
+              rdfs:subClassOf :Seat ;
+              rdfs:comment "A standard seat class on a flight offering basic services with an emphasis on affordability." ;
+              rdfs:label "Economy Class Seat" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Flight
+:Flight rdf:type owl:Class ;
+        rdfs:comment "A scheduled journey of an aircraft from one airport to another." ;
+        rdfs:label "Flight" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/LongHaul
+:LongHaul rdf:type owl:Class ;
+          rdfs:subClassOf :Flight ;
+          rdfs:comment "A flight that covers a great distance and typically has a duration of six hours or more." ;
+          rdfs:label "Long Haul Flight" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Passenger
+:Passenger rdf:type owl:Class ;
+           rdfs:comment "An individual who travels in an aircraft." ;
+           rdfs:label "Passenger" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/QatarAirways
+:QatarAirways rdf:type owl:Class ;
+              rdfs:subClassOf :Airline ;
+              rdfs:comment "The state-owned flag carrier of Qatar, known for its high-quality service and global flight network." ;
+              rdfs:label "Qatar Airways" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/QatarAirwaysSurvey
+:QatarAirwaysSurvey rdf:type owl:Class ;
+                    rdfs:subClassOf :Survey ;
+                    rdfs:comment "A passenger's survey response specifically related to a Qatar Airways flight experience." ;
+                    rdfs:label "Qatar Airways Survey" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Ryanair
+:Ryanair rdf:type owl:Class ;
+         rdfs:subClassOf :Airline ;
+         rdfs:comment "An Irish low-cost carrier with a wide network of short-haul and medium-haul flights across Europe and North Africa." ;
+         rdfs:label "Ryanair" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/RyanairSurvey
+:RyanairSurvey rdf:type owl:Class ;
+               rdfs:subClassOf :Survey ;
+               rdfs:comment "A passenger's survey response specifically related to a Ryanair flight experience." ;
+               rdfs:label "Ryanair Survey" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Seat
+:Seat rdf:type owl:Class ;
+      rdfs:comment "A place for a passenger to sit on a flight, can be classified into various categories based on comfort and services." ;
+      rdfs:label "Seat" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/ShortHaul
+:ShortHaul rdf:type owl:Class ;
+           rdfs:subClassOf :Flight ;
+           rdfs:comment "A flight that covers a short distance, typically within the same continent and lasting less than six hours." ;
+           rdfs:label "Short Haul Flight" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Survey
+:Survey rdf:type owl:Class ;
+        rdfs:comment "An evaluation or review given by a passenger that reflects their experience and satisfaction with a flight." ;
+        rdfs:label "Survey" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#FlightQR001
+:FlightQR001 rdf:type owl:NamedIndividual ,
+                      :LongHaul ;
+             rdfs:label "Flight QR001" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#JohnDoePassenger
+:JohnDoePassenger rdf:type owl:NamedIndividual ,
+                           :Passenger ;
+                  :name "John Doe" ;
+                  rdfs:label "John Doe" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Qatar_Airways
+:Qatar_Airways rdf:type owl:NamedIndividual ,
+                        :QatarAirways ;
+               :country "Qatar" ;
+               :name "Qatar Airways" ;
+               rdfs:label "Qatar Airways" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Seat1A
+:Seat1A rdf:type owl:NamedIndividual ,
+                 :BusinessClass ;
+        :aircraft "Boeing" ;
+        rdfs:label "Seat 1A" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Survey001
+:Survey001 rdf:type owl:NamedIndividual ,
+                    :QatarAirwaysSurvey ;
+           :datePublished "2024-03-02" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
