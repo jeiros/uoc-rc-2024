@@ -181,59 +181,6 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#CabinCrew
-:CabinCrew rdf:type owl:Class ;
-           rdfs:subClassOf :CrewMember ;
-           rdfs:comment "A crew member who is responsible for the safety and comfort of passengers during a flight." ;
-           rdfs:label "Cabin Crew" .
-
-
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#CrewMember
-:CrewMember rdf:type owl:Class ;
-            rdfs:comment "An individual who is a member of the flight crew, responsible for the operation of the aircraft and service during the flight." ;
-            rdfs:label "Crew Member" .
-
-
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#EntertainmentSystem
-:EntertainmentSystem rdf:type owl:Class ;
-                     rdfs:subClassOf :FlightServices ;
-                     rdfs:comment "An electronic system provided to passengers during a flight for leisure, such as movies, music, or games." ;
-                     rdfs:label "Entertainment System" .
-
-
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#FlightServices
-:FlightServices rdf:type owl:Class ;
-                rdfs:comment "A series of ammenities and other various services provided to passengers of a flight." ;
-                rdfs:label "Flight Services" .
-
-
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Internet
-:Internet rdf:type owl:Class ;
-          rdfs:subClassOf :FlightServices ;
-          rdfs:comment "The ability to connect passenger's electronic devices to the public Internet." ;
-          rdfs:label "Internet" .
-
-
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Luggage
-:Luggage rdf:type owl:Class ;
-         rdfs:comment "Personal belongings of passengers transported in the aircraft's hold or cabin." ;
-         rdfs:label "Luggage" .
-
-
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#MealService
-:MealService rdf:type owl:Class ;
-             rdfs:subClassOf :FlightServices ;
-             rdfs:comment "A service provided on a flight that includes the offering of meals and beverages to passengers." ;
-             rdfs:label "Meal Service" .
-
-
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Pilot
-:Pilot rdf:type owl:Class ;
-       rdfs:subClassOf :CrewMember ;
-       rdfs:comment "A crew member who is qualified to operate the aircraft and is responsible for navigating the flight." ;
-       rdfs:label "Pilot" .
-
-
 ###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Airline
 :Airline rdf:type owl:Class ;
          rdfs:comment "An organization that provides air transport services for traveling passengers." ;
@@ -247,6 +194,19 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
                rdfs:label "Business Class Seat" .
 
 
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/CabinCrew
+:CabinCrew rdf:type owl:Class ;
+           rdfs:subClassOf :CrewMember ;
+           rdfs:comment "A crew member who is responsible for the safety and comfort of passengers during a flight." ;
+           rdfs:label "Cabin Crew" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/CrewMember
+:CrewMember rdf:type owl:Class ;
+            rdfs:comment "An individual who is a member of the flight crew, responsible for the operation of the aircraft and service during the flight." ;
+            rdfs:label "Crew Member" .
+
+
 ###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/EconomyClass
 :EconomyClass rdf:type owl:Class ;
               rdfs:subClassOf :Seat ;
@@ -254,10 +214,30 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
               rdfs:label "Economy Class Seat" .
 
 
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/EntertainmentSystem
+:EntertainmentSystem rdf:type owl:Class ;
+                     rdfs:subClassOf :FlightServices ;
+                     rdfs:comment "An electronic system provided to passengers during a flight for leisure, such as movies, music, or games." ;
+                     rdfs:label "Entertainment System" .
+
+
 ###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Flight
 :Flight rdf:type owl:Class ;
         rdfs:comment "A scheduled journey of an aircraft from one airport to another." ;
         rdfs:label "Flight" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/FlightServices
+:FlightServices rdf:type owl:Class ;
+                rdfs:comment "A series of ammenities and other various services provided to passengers of a flight." ;
+                rdfs:label "Flight Services" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Internet
+:Internet rdf:type owl:Class ;
+          rdfs:subClassOf :FlightServices ;
+          rdfs:comment "The ability to connect passenger's electronic devices to the public Internet." ;
+          rdfs:label "Internet" .
 
 
 ###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/LongHaul
@@ -267,10 +247,30 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
           rdfs:label "Long Haul Flight" .
 
 
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Luggage
+:Luggage rdf:type owl:Class ;
+         rdfs:comment "Personal belongings of passengers transported in the aircraft's hold or cabin." ;
+         rdfs:label "Luggage" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/MealService
+:MealService rdf:type owl:Class ;
+             rdfs:subClassOf :FlightServices ;
+             rdfs:comment "A service provided on a flight that includes the offering of meals and beverages to passengers." ;
+             rdfs:label "Meal Service" .
+
+
 ###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Passenger
 :Passenger rdf:type owl:Class ;
            rdfs:comment "An individual who travels in an aircraft." ;
            rdfs:label "Passenger" .
+
+
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Pilot
+:Pilot rdf:type owl:Class ;
+       rdfs:subClassOf :CrewMember ;
+       rdfs:comment "A crew member who is qualified to operate the aircraft and is responsible for navigating the flight." ;
+       rdfs:label "Pilot" .
 
 
 ###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/QatarAirways
@@ -324,20 +324,22 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#FlightQR001
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/FlightQR001
 :FlightQR001 rdf:type owl:NamedIndividual ,
                       :LongHaul ;
+             :destination "LHR" ;
+             :origin "DOH" ;
              rdfs:label "Flight QR001" .
 
 
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#JohnDoePassenger
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/JohnDoePassenger
 :JohnDoePassenger rdf:type owl:NamedIndividual ,
                            :Passenger ;
                   :name "John Doe" ;
                   rdfs:label "John Doe" .
 
 
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Qatar_Airways
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Qatar_Airways
 :Qatar_Airways rdf:type owl:NamedIndividual ,
                         :QatarAirways ;
                :country "Qatar" ;
@@ -345,17 +347,16 @@ rdfs:sameAs rdf:type owl:AnnotationProperty .
                rdfs:label "Qatar Airways" .
 
 
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Seat1A
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Seat1A
 :Seat1A rdf:type owl:NamedIndividual ,
                  :BusinessClass ;
         :aircraft "Boeing" ;
         rdfs:label "Seat 1A" .
 
 
-###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas#Survey001
+###  http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Survey001
 :Survey001 rdf:type owl:NamedIndividual ,
-                    :QatarAirwaysSurvey ;
-           :datePublished "2024-03-02" .
+                    :QatarAirwaysSurvey .
 
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
