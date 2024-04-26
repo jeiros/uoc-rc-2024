@@ -1,0 +1,148 @@
+{
+  "@context" : {
+    "ShortHaul" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/ShortHaul"
+    },
+    "origin" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/origin",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "country" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/country",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "operates" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/operates",
+      "@type" : "@id"
+    },
+    "body" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/body",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "destination" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/destination",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "FlightServices" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/FlightServices"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "author" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/author",
+      "@type" : "@id"
+    },
+    "CabinCrew" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/CabinCrew"
+    },
+    "EntertainmentSystem" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/EntertainmentSystem"
+    },
+    "operatedBy" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/operatedBy",
+      "@type" : "@id"
+    },
+    "Pilot" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Pilot"
+    },
+    "name" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/name",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "QatarAirways" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/QatarAirways"
+    },
+    "flightDate" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/flightDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Passenger" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Passenger"
+    },
+    "MealService" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/MealService"
+    },
+    "Seat" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Seat"
+    },
+    "reviewedIn" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/reviewedIn",
+      "@type" : "@id"
+    },
+    "Survey" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Survey"
+    },
+    "LongHaul" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/LongHaul"
+    },
+    "RyanairSurvey" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/RyanairSurvey"
+    },
+    "Luggage" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Luggage"
+    },
+    "submits" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/submits",
+      "@type" : "@id"
+    },
+    "Ryanair" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Ryanair"
+    },
+    "title" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/title",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasSeatType" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/hasSeatType",
+      "@type" : "@id"
+    },
+    "datePublished" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/datePublished",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Airline" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Airline"
+    },
+    "QatarAirwaysSurvey" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/QatarAirwaysSurvey"
+    },
+    "Flight" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Flight"
+    },
+    "countryOfOrigin" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/countryOfOrigin",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "CrewMember" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/CrewMember"
+    },
+    "recommended" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/recommended",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "EconomyClass" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/EconomyClass"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#sameAs"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "aircraft" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/aircraft",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "rating" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/rating",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "BusinessClass" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/BusinessClass"
+    },
+    "Internet" : {
+      "@id" : "http://www.semanticweb.org/juan/ontologies/2024/3/satisfaccion-aerolineas/Internet"
+    }
+  }
+}

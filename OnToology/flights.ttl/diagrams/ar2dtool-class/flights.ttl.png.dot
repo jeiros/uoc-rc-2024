@@ -1,0 +1,24 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "base:Passenger" "base:Survey" "base:Seat" "base:Flight" "base:Airline" ; /*classes style*/
+	"base:Flight" -> "base:Survey" [ label = "base:reviewedIn" ];
+	"base:Survey" -> "base:Passenger" [ label = "base:author" ];
+	"base:Flight" -> "xsd:string" [ label = "base:destination" ];
+	"base:Survey" -> "xsd:string" [ label = "base:title" ];
+	"base:Survey" -> "xsd:dateTime" [ label = "base:datePublished" ];
+	"base:Flight" -> "base:Airline" [ label = "base:operatedBy" ];
+	"base:Airline" -> "xsd:string" [ label = "base:country" ];
+	"base:Flight" -> "xsd:string" [ label = "base:origin" ];
+	"base:Airline" -> "base:Flight" [ label = "base:operates" ];
+	"base:Survey" -> "xsd:boolean" [ label = "base:recommended" ];
+	"base:Survey" -> "xsd:string" [ label = "base:body" ];
+	"base:Passenger" -> "xsd:string" [ label = "base:countryOfOrigin" ];
+	"base:Survey" -> "xsd:double" [ label = "base:rating" ];
+	"base:Flight" -> "xsd:string" [ label = "base:aircraft" ];
+	"base:Passenger" -> "base:Survey" [ label = "base:submits" ];
+	"base:Flight" -> "xsd:dateTime" [ label = "base:flightDate" ];
+	"base:Flight" -> "base:Seat" [ label = "base:hasSeatType" ];
+	"base:Airline" -> "xsd:string" [ label = "base:name" ];
+
+}

@@ -1,0 +1,19 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:LongHaul" "base:MealService" "base:EntertainmentSystem" "base:Internet" "base:FlightServices" "base:QatarAirwaysSurvey" "base:Pilot" "base:BusinessClass" "base:Survey" "base:QatarAirways" "base:Seat" "base:ShortHaul" "base:EconomyClass" "base:Ryanair" "base:Flight" "base:Airline" "base:CrewMember" "base:RyanairSurvey" "base:CabinCrew" ; /*classes style*/
+	"base:Pilot" -> "base:CrewMember" [ label = "rdfs:subClassOf" ];
+	"base:CabinCrew" -> "base:CrewMember" [ label = "rdfs:subClassOf" ];
+	"base:LongHaul" -> "base:Flight" [ label = "rdfs:subClassOf" ];
+	"base:RyanairSurvey" -> "base:Survey" [ label = "rdfs:subClassOf" ];
+	"base:QatarAirwaysSurvey" -> "base:Survey" [ label = "rdfs:subClassOf" ];
+	"base:Internet" -> "base:FlightServices" [ label = "rdfs:subClassOf" ];
+	"base:BusinessClass" -> "base:Seat" [ label = "rdfs:subClassOf" ];
+	"base:QatarAirways" -> "base:Airline" [ label = "rdfs:subClassOf" ];
+	"base:EntertainmentSystem" -> "base:FlightServices" [ label = "rdfs:subClassOf" ];
+	"base:ShortHaul" -> "base:Flight" [ label = "rdfs:subClassOf" ];
+	"base:Ryanair" -> "base:Airline" [ label = "rdfs:subClassOf" ];
+	"base:EconomyClass" -> "base:Seat" [ label = "rdfs:subClassOf" ];
+	"base:MealService" -> "base:FlightServices" [ label = "rdfs:subClassOf" ];
+
+}
